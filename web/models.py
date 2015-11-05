@@ -6,7 +6,7 @@ class Group(models.Model):
 
 class UploadedFile(models.Model):
     title = models.CharField(max_length=50)
-    file = models.FileField(upload_to='/tmp/', blank=True, null=True)
+    file = models.FileField(upload_to='uploads', blank=True, null=True)
     
     # Privacy settings
     group = models.ForeignKey('Group', default=None, null=True)
