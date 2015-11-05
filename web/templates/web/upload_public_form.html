@@ -1,0 +1,5 @@
+<form action="{% url 'web:upload_public' %}" method="POST">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" value="Upload" />
+</form>
