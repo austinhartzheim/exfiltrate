@@ -1,10 +1,11 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from . import forms
+from . import forms, models
 
 
-def web_list(request):
-    pass
+def web_list_public(request):
+    public_files = models.UploadedFile.objects.filter(private=False)
+    return render(request, 'web/list_public_files.html', {'files': public_files})
 
 def web_upload_public_form(request):
     form = forms.UploadPublicForm()
