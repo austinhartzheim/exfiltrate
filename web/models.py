@@ -6,7 +6,7 @@ class Group(models.Model):
 
 class UploadedFile(models.Model):
     title = models.CharField(max_length=50)
-    file = models.FileField(upload_to='uploads', blank=True, null=True)
+    file = models.FileField(upload_to='uploads/%Y/%m/%d', blank=True, null=True)
     
     date = models.DateTimeField(auto_now_add=True)
     
